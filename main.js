@@ -23,7 +23,7 @@ cognitoidentityserviceprovider.getUser(params, function(err, data) {
     if (err) 
     {
         // Change - Link to the Home Page
-        window.location.href = 'https://rushidonga.github.io/cognito-auth/'
+        window.location.href = 'https://rella-raffick.github.io/team3-app/'
     }
     else 
     {
@@ -33,7 +33,8 @@ cognitoidentityserviceprovider.getUser(params, function(err, data) {
         {
             if(data.UserAttributes[i].Name == 'name')
             {
-                UserName = data.UserAttributes[i].Value;
+                UserName = data.Username.Value;
+                
             }
         }
 
@@ -42,6 +43,7 @@ cognitoidentityserviceprovider.getUser(params, function(err, data) {
             if(data.UserAttributes[j].Name == 'email')
             {
                 UserEmail = data.UserAttributes[j].Value;
+                console.log(UserEmail);
             }
         }
 
